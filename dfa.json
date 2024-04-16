@@ -1,0 +1,297 @@
+{
+    "primitive_types": [
+        "void",
+        "boolean",
+        "int",
+        "float",
+        "if",
+        "else",
+        "while",
+        "for",
+        "break",
+        "continue",
+        "return"
+    ],
+    "special_literals": [
+        "true",
+        "false"
+    ],
+    "end_type": [
+        "IDENTIFIER",
+        "PRIMITIVE_TYPES",
+        "ARITHMETIC_OPERATOR",
+        "RELATIONAL_OPERATOR",
+        "EQUALITY_OPERATOR",
+        "LOGICAL_OPERATOR",
+        "ASSIGNMENT_OPERATOR",
+        "SEPARATOR",
+        "INTEGER_LITERAL",
+        "FLOAT_LITERAL",
+        "STRING_LITERAL",
+        "COMMENT"
+    ],
+
+    "nodes": {
+        "0": {
+            "children": {
+                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_?": "1",
+                "0123456789": "2",
+                "+-*": "3",
+                "/": "4",
+                "<": "5",
+                ">": "6",
+                "=": "7",
+                "!": "8",
+                "&": "9",
+                "|": "10",
+                "()[]{},;": "11",
+                ".": "12",
+                "\"": "13"
+            },
+            "end": false,
+            "start": true
+        },
+        "1":
+        {
+            "children":
+            {
+                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789": "1"
+            },
+            "end": true,
+            "end_type": "IDENTIFIER"
+        },
+        
+        "2":
+        {
+            "children": 
+            {
+                "0123456789": "2",
+                ".": "12",
+                "Ee": "14"
+            },
+            "end": true,
+            "end_type": "INTEGER_LITERAL"
+        },
+
+        "3":
+        {
+            "children": {},
+            "end" : true,
+            "end_type": "ARITHMETIC_OPERATOR"
+        },
+
+        "4": 
+        {
+            "children": 
+            {
+                "*": "15",
+                "/": "166"
+            },
+            "end": true,
+            "end_type": "ARITHMETIC_OPERATOR"
+        },
+
+        "5":
+        {
+            "children":
+            {
+                "=": "17"
+            },
+            "end": true,
+            "end_type": "RELATIONAL_OPERATOR"
+        },
+
+        "6":
+        {
+            "children": 
+            {
+                "=": "18"
+            },
+            "end": true,
+            "end_type": "RELATIONAL_OPERATOR"
+        },
+
+        "7":
+        {
+            "children":
+            {
+                "=": "19"
+            },
+            "end": true,
+            "end_type": "ASSIGNMENT_OPERATOR"
+        },
+
+        "8":
+        {
+            "children":
+            {
+                "=": "20"
+            },
+            "end": true,
+            "end_type": "LOGICAL_OPERATOR"
+        },
+
+        "9":
+        {
+            "children":
+            {
+                "&": "21"
+            },
+            "end": false
+        },
+
+        "10":
+        {
+            "children":
+            {
+                "|": "22"
+            },
+            "end": false
+        },
+
+        "11":
+        {
+            "children":{},
+            "end": true,
+            "end_type": "SEPARATOR"
+        },
+
+        "12":
+        {
+            "children":
+            {
+                "0123456789": "24"
+            },
+            "end": false
+        },
+
+        "13": {
+            "children": {
+              "EXCLUDE\"\r\n": "13",
+              "\\": "29",
+              "\"": "30"
+            },
+            "end": false
+        },
+        "29": {
+            "children": {
+              "bfnt\"'\\": "13"
+            },
+            "end": false
+        },
+        "30": {
+            "children": {},
+            "end": true,
+            "end_type": "STRING_LITERAL"
+          },
+        "14":
+        {
+            "children":
+            {
+                "+-": "25",
+                "0123456789": "26"
+            },
+            "end": false
+        },
+        
+        "15":
+        {
+            "children":
+            {
+                "EXCLUDE*": "15",
+                "*": "27"
+            },
+            "end": false
+        },
+
+        "17": 
+        {
+            "children":{},
+            "end": true,
+            "end_type": "RELATIONAL_OPERATOR"
+        },
+
+        "18":
+        {
+            "children":{},
+            "end": true,
+            "end_type": "RELATIONAL_OPERATOR"
+        },
+
+        "19":
+        {
+            "children":{},
+            "end": true,
+            "end_type": "EQUALITY_OPERATOR"
+        },
+
+        "20": 
+        {
+            "children":{},
+            "end": true,
+            "end_type": "EQUALITY_OPERATOR"
+        },
+
+        "21": 
+        {
+            "children":{},
+            "end": true,
+            "end_type": "LOGICAL_OPERATOR"
+        },
+
+        "22":
+        {
+            "children":{},
+            "end": true,
+            "end_type": "LOGICAL_OPERATOR"
+        },
+
+        "24": 
+        {
+            "children": 
+            {
+                "0123456789": "24",
+                "Ee": "14"
+            },
+            "end": true,
+            "end_type": "FLOAT_LITERAL"
+        },
+
+        "25":
+        {
+            "children":
+            {
+                "0123456789": "25"
+            },
+            "end": false
+        },
+
+        "26":
+        {
+            "children": 
+            {
+                "0123456789": "26"
+            },
+            "end": true,
+            "end_type": "FLOAT_LITERAL"
+        },
+
+        "27":
+        {
+            "children":
+            {
+                "EXCLUDE*/": "15",
+                "*": "27",
+                "/": "28"
+            },
+            "end": false
+        },
+
+        "28": 
+        {
+            "children":{},
+            "end": true,
+            "end_type": "COMMENT"
+        }
+    }
+}
