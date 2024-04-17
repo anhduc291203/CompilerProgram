@@ -85,7 +85,7 @@
             "children": 
             {
                 "*": "15",
-                "/": "166"
+                "/": "16"
             },
             "end": true,
             "end_type": "ARITHMETIC_OPERATOR"
@@ -173,17 +173,7 @@
             },
             "end": false
         },
-        "29": {
-            "children": {
-              "bfnt\"'\\": "13"
-            },
-            "end": false
-        },
-        "30": {
-            "children": {},
-            "end": true,
-            "end_type": "STRING_LITERAL"
-          },
+        
         "14":
         {
             "children":
@@ -200,6 +190,16 @@
             {
                 "EXCLUDE*": "15",
                 "*": "27"
+            },
+            "end": false
+        },
+
+        "16":
+        {
+            "children":
+            {
+                "EXCLUDE\r\n": "16",
+                "\r\n": "23"
             },
             "end": false
         },
@@ -292,6 +292,19 @@
             "children":{},
             "end": true,
             "end_type": "COMMENT"
+        },
+
+        "29": {
+            "children": {
+              "bfnt\"'\\": "13"
+            },
+            "end": false
+        },
+
+        "30": {
+            "children": {},
+            "end": true,
+            "end_type": "STRING_LITERAL"
         }
     }
 }
