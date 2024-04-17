@@ -246,6 +246,13 @@
             "end_type": "LOGICAL_OPERATOR"
         },
 
+        "23":
+        {
+            "children":{},
+            "end": true,
+            "end_type": "COMMENT"
+        },
+        
         "24": 
         {
             "children": 
