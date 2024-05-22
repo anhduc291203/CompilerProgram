@@ -8,7 +8,7 @@ CLOSE_BRACKET_FOR_OUTPUT = 'CLOSE_BRACKET_FOR_OUTPUT'
 
 NAME = 'python vcparser.py'
 DESCRIPTION = 'this is a parser for the VC programming language. It takes a source file and outputs an abstract syntax tree in the form of a nested list.'
-EPILOG = 'this is a part of the VC compiler project | author: duongoku'
+EPILOG = 'this is a part of the VC compiler project | author: Ducpa'
 
 rules = {}
 non_terminals = set()
@@ -296,44 +296,47 @@ def parse(parse_table, token_list):
                 if len(filtered_temp) > 1:
             # If there are more than one child in the left hand side of the rule
             # Then push CLOSE_BRACKET_FOR_OUTPUT to the stack to group them
-                    print(result)
-                    print(filtered_temp)
+                    # print(result)
+                    # print(filtered_temp)
                     stack.append(CLOSE_BRACKET_FOR_OUTPUT)
                     result.append('(')
             stack += temp[0][::-1]
          
     stack = []
-    print(range(len(result)))
+    # print(range(len(result)))
    
-    
+    # print(result)
     # Remove unnecessary brackets
     for i in range(len(result)):
+        # print(result[i])
         if  result[i] == '(': 
             stack.append('(')
-            print(stack)
+            # print(stack)
         elif result[i] == ')':
             temp = []
             count = 0
             while stack[-1] != '(':
-                # print(stack)
                 count += 1
                 temp.append(stack.pop())
                 # print(temp)
             temp = temp[::-1]
             stack.pop()
             # print(temp)
-            if count > 1:
+            if count > 1 :
                 stack.append('( '+' '.join(temp)+' )')
+            elif count == 0:
+                stack.append(('('+' '.join(temp)+')'))
             else:
                 stack.append(' '.join(temp))
         else:
             # print(stack)
             stack.append(result[i])
+    # print(stack)
     result_string = ' '.join(stack)
     result_string = result_string[:-1]
     # Revert the parentheses to their original form
     print(result_string.replace('OPEN_BRACKET', '(').replace('CLOSE_BRACKET', ')'))
-    return stack[0].replace('OPEN_BRACKET', '(').replace('CLOSE_BRACKET', ')')
+    return result_string.replace('OPEN_BRACKET', '(').replace('CLOSE_BRACKET', ')')
 
 def indent(nest):
     """
